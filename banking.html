@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Services Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-blue-900 flex items-center justify-center min-h-screen">
+
+    <div class="container w-full max-w-2xl p-8 bg-white rounded-lg shadow-md">
+        <h1 class="text-3xl font-bold mb-6 text-center">Banking Services Request</h1>
+
+        <form id="bankingForm" class="space-y-6">
+            <!-- UPI Services -->
+            <div>
+                <h2 class="text-xl font-semibold mb-3">UPI Services</h2>
+                <div class="form-group">
+                    <label for="upiId" class="block text-sm font-medium text-gray-700">UPI ID</label>
+                    <input type="text" id="upiId" name="upiId" required placeholder="Enter your UPI ID"
+                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-2">
+                </div>
+            </div>
+
+            <!-- Cash Withdrawal -->
+            <div>
+                <h2 class="text-xl font-semibold mb-3">Cash Withdrawal</h2>
+                <div class="form-group">
+                    <label for="withdrawAmount" class="block text-sm font-medium text-gray-700">Amount to Withdraw (INR)</label>
+                    <input type="number" id="withdrawAmount" name="withdrawAmount" required placeholder="Enter amount"
+                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-2">
+                </div>
+            </div>
+
+            <!-- Debit Card Services -->
+            <div>
+                <h2 class="text-xl font-semibold mb-3">Debit Card Services</h2>
+                <div class="form-group">
+                    <label for="cardNumber" class="block text-sm font-medium text-gray-700">Debit Card Number</label>
+                    <input type="text" id="cardNumber" name="cardNumber" required placeholder="Enter your card number"
+                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-2">
+                </div>
+
+                <div class="form-group">
+                    <label for="cardIssue" class="block text-sm font-medium text-gray-700">Issue with Card</label>
+                    <select id="cardIssue" name="cardIssue" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-2">
+                        <option>Card not working</option>
+                        <option>Lost/Stolen</option>
+                        <option>Need replacement</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Internet Banking -->
+            <div>
+                <h2 class="text-xl font-semibold mb-3">Internet Banking</h2>
+                <div class="form-group">
+                    <label for="internetBankingId" class="block text-sm font-medium text-gray-700">Internet Banking User ID</label>
+                    <input type="text" id="internetBankingId" name="internetBankingId" required placeholder="Enter your User ID"
+                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-2">
+                </div>
+
+                <div class="form-group">
+                    <label for="internetBankingIssue" class="block text-sm font-medium text-gray-700">Issue with Internet Banking</label>
+                    <textarea id="internetBankingIssue" name="internetBankingIssue" rows="3" required placeholder="Describe your issue"
+                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-2"></textarea>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="w-full bg-blue-500 text-white font-bold py-2 rounded-md hover:bg-blue-600">Submit Request</button>
+        </form>
+    </div>
+
+</body>
+</html>

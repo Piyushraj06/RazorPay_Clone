@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-blue-900 flex items-center justify-center min-h-screen">
+
+    <div class="container w-full max-w-lg p-8 bg-white rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold mb-6 text-center">Support Form</h1>
+        <form id="supportForm" class="space-y-4">
+            <div class="form-group">
+                <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Your Name"
+                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-2">
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Your Email"
+                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-2">
+            </div>
+
+            <div class="form-group">
+                <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                <textarea id="message" name="message" rows="4" required placeholder="Describe your issue"
+                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-2"></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-blue-500 text-white font-bold py-2 rounded-md hover:bg-blue-600">Submit</button>
+        </form>
+        <div id="messageOutput" class="mt-4 text-center text-red-500"></div>
+    </div>
+
+</body>
+<script>
+    document.getElementById('supportForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from being submitted automatically
+    
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        const messageOutput = document.getElementById('messageOutput');
+    
+        // Simple validation
+        if (!name || !email || !message) {
+            messageOutput.innerHTML = 'Please fill in all fields.';
+            messageOutput.classList.add('text-red-500'); // Show error message
+            return;
+        }
+    
+        // Basic email validation (simple regex)
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            messageOutput.innerHTML = 'Please enter a valid email address.';
+            messageOutput.classList.add('text-red-500');
+            return;
+        }
+    
+        // Simulate form submission (you can add real form submission here)
+        messageOutput.innerHTML = 'Your support request has been submitted successfully!';
+        messageOutput.classList.remove('text-red-500');
+        messageOutput.classList.add('text-green-500'); // Show success message
+    
+        // Reset the form
+        document.getElementById('supportForm').reset();
+    });
+    
+</script>
+</html>
